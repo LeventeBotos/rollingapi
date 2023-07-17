@@ -1,10 +1,12 @@
 const express = require("express");
 const sgMail = require("@sendgrid/mail");
+const cors = require("cors");
 require("dotenv").config();
 
 sgMail.setApiKey(process.env.SGMAIL);
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.post("/", async (req, res) => {
@@ -30,7 +32,8 @@ app.post("/", async (req, res) => {
   };
 
   try {
-    await sgMail.send(msg);
+    // await sgMail.send(msg);
+    console.log(msg);
     console.log("SGmail");
   } catch (e) {
     console.log(e);
