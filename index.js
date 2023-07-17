@@ -12,7 +12,7 @@ app.post("/", async (req, res) => {
 
   const msg = {
     to: "levinandi98@gmail.com",
-    from: "botos.levente2007@gmail.com",
+    from: "kovdanak@gmail.com",
     subject: "Új megrendelés",
     text: "RR",
     html: `<div>${name} leadott egy rendelést.
