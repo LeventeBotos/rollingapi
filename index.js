@@ -13,7 +13,7 @@ app.post("/", async (req, res) => {
   const { name, email, phone, address, price, prods } = req.body;
 
   const msg = {
-    to: "levinandi98@gmail.com",
+    to: "rolling.royals.kft@gmail.com",
     from: "kovdanak@gmail.com",
     subject: "Új megrendelés",
     text: "RR",
