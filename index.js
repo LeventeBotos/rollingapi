@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/", async (req, res) => {
-  const { name, email, phone, address, price, prods } = req.body;
+  const { name, email, phone, address, price, prods, shipping } = req.body;
 
   const msg = {
     to: "rolling.royals.kft@gmail.com",
@@ -28,6 +28,8 @@ app.post("/", async (req, res) => {
         Cím: ${address}
         <br />
         Ár: ${price}
+        <br />
+        Szállítási mód: ${shipping}
         </div>`,
   };
   const msg2 = {
@@ -46,6 +48,8 @@ app.post("/", async (req, res) => {
         Cím: ${address}
         <br />
         Ár: ${price}
+        <br />
+        Szállítási mód: ${shipping}
         </div>`,
   };
 
