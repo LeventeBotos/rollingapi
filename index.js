@@ -30,9 +30,28 @@ app.post("/", async (req, res) => {
         Ár: ${price}
         </div>`,
   };
+  const msg2 = {
+    to: "botos.levente2007@gmail.com",
+    from: "kovdanak@gmail.com",
+    subject: "Új megrendelés",
+    text: "RR",
+    html: `<div>${name} leadott egy rendelést.
+        <br />
+        Telefonszám: <a href="tel:${phone}">${phone}</a>,
+        <br />
+        Email:  <a href="mailto:${email}">${email}</a>
+        <br />
+        Választotta: ${prods}
+        <br />
+        Cím: ${address}
+        <br />
+        Ár: ${price}
+        </div>`,
+  };
 
   try {
-    // await sgMail.send(msg);
+    await sgMail.send(msg);
+    await sgMail.send(msg2);
     console.log(msg);
     console.log("SGmail");
   } catch (e) {
